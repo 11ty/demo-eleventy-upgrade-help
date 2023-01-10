@@ -1,0 +1,16 @@
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyRenderPlugin, {
+    tagName: "customizedRenderTemplate"
+  });
+  eleventyConfig.addDataExtension("txt", () => ({}));
+
+  // eleventyConfig.ignores.add("dlskjfkljdsj");
+
+  // eleventyConfig.setBrowserSyncConfig();
+
+  // This needs to be the last plugin
+  eleventyConfig.addPlugin(UpgradeHelper);
+};
