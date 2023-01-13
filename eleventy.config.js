@@ -2,6 +2,8 @@ const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
+  // eleventyConfig.setServerPassthroughCopyBehavior("copy");
+
   eleventyConfig.addPlugin(EleventyRenderPlugin, {
     tagName: "customizedRenderTemplate"
   });
