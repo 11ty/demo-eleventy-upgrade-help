@@ -1,6 +1,7 @@
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
+/** @param {import('@11ty/eleventy').UserConfig} eleventyConfig */
 module.exports = function(eleventyConfig) {
   // eleventyConfig.setServerPassthroughCopyBehavior("copy");
 
