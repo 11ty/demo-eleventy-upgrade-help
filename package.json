@@ -1,15 +1,18 @@
 {
   "name": "@11ty/demo-eleventy-upgrade-help",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "",
   "scripts": {
-    "build": "npx @11ty/eleventy --input=src --quiet"
+    "build": "npx @11ty/eleventy --quiet",
+    "build-explicit-config-file": "npx @11ty/eleventy --quiet --config=does_not_exist.js",
+    "build-empty-formats": "npx @11ty/eleventy --quiet --formats=",
+    "build-compat": "node --experimental-require-module ./node_modules/@11ty/eleventy/cmd.cjs"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "2.0.0-canary.30",
-    "@11ty/eleventy-upgrade-help": "^2.0.2"
+    "@11ty/eleventy": "3.0.0-alpha.17",
+    "@11ty/eleventy-upgrade-help": "^3.0.0"
   }
 }

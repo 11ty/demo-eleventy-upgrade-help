@@ -1,5 +1,0 @@
----
-renderData:
-  key: value
----
-Hi

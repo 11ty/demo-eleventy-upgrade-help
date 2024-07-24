@@ -1,18 +1,37 @@
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
+// const {EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin} = require("@11ty/eleventy");
+// console.log( EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin );
 
-module.exports = function(eleventyConfig) {
-  // eleventyConfig.setServerPassthroughCopyBehavior("copy");
+module.exports = async function(eleventyConfig) {
+  // const {EleventyRenderPlugin, EleventyI18nPlugin, EleventyHtmlBasePlugin} = await import("@11ty/eleventy");
 
-  eleventyConfig.addPlugin(EleventyRenderPlugin, {
-    tagName: "customizedRenderTemplate"
-  });
-  eleventyConfig.addDataExtension("txt", () => ({}));
+  // Removed Plugins
+  // const { EleventyServerlessBundlerPlugin, EleventyEdgePlugin } = await import("@11ty/eleventy");
+  // eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin);
+  // eleventyConfig.addPlugin(EleventyEdgePlugin);
 
-  // eleventyConfig.ignores.add("dlskjfkljdsj");
+  // Aliases
+  // eleventyConfig.addExtension("markdown", {
+  //   key: "md"
+  // })
 
-  // eleventyConfig.setBrowserSyncConfig();
+  // Removed template syntaxes
+  eleventyConfig.addExtension("pug", {
+    compile: () => {},
+    compileOptions: {
+      permalink: "raw"
+    }
+  })
 
   // This needs to be the last plugin
   eleventyConfig.addPlugin(UpgradeHelper);
+
+  return {
+    // templateFormats: "md,markdown",
+    // dir: {
+    //   input: ".",
+    //   output: ".",
+    // },
+    // htmlOutputSuffix: "-o"
+  }
 };
