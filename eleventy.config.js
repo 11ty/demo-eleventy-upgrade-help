@@ -35,3 +35,9 @@ module.exports = async function(eleventyConfig) {
     // htmlOutputSuffix: "-o"
   }
 };
+
+module.exports.config = {
+  dir: {
+    input: "src"
+  }
+}
